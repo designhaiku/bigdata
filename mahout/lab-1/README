@@ -1,0 +1,37 @@
+GOAL:  To explore how a recommender works.
+CHANGE: You can change the sales.csv file.
+---------------------------------------------
+
+S X U --> R
+S:  Similarity matrix between items
+U:  User preferences for items
+R:  Predicted recommendations
+
+Let's suppose we have five customers (1,2,3,4,5)
+
+And we have 10 items to sell (1000, 2000, 3000, 4000, 50000, 6000, 7000, 8000, 9000, 10000)
+
+Endorsements:  10.0 - poor,  30.0 - equal, 50.0 - best
+
+Run simple recommender:
+- mvn exec:java -Drecommender
+
+
+
+
+
+GOAL:  To explore how a clustering method works
+---------------------------------------------
+
+|               *    *
+|                 * *
+|                      *
+|
+|
+|    *
+| *  *
+|  *
++-----------------------------
+
+Run simple clsutering example:
+- mvn exec:java -Dclustering
