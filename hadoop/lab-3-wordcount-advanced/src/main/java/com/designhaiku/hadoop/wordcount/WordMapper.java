@@ -68,7 +68,7 @@ public class WordMapper extends MapReduceBase implements Mapper<LongWritable, Te
             line = line.replaceAll(pattern, "");
 
         }
-        StringTokenizer tokenizer = new StringTokenizer(line);
+        StringTokenizer tokenizer = new StringTokenizer(line," \t\n;:,.\"?!");
         while (tokenizer.hasMoreTokens()) {
             word.set(tokenizer.nextToken());
             output.collect(word, one);
