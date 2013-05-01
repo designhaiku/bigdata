@@ -1,0 +1,5 @@
+smith, joe, 123-45-6789, 3.5,Study more!
+miller,trent,987-65-4321,3.7,study less!
+smoe,joe,111-22-3333,2.5,less party
+other,some,222-33-4444,3.5,study
+other,you,999-33-4444, 2.5,hi
