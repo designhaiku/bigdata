@@ -1,11 +1,11 @@
-DROP TABLE grade;
+set hive.exec.scratchdir=/user/hive/tmp;
+
+DROP TABLE IF EXISTS grade;
 
 CREATE TABLE grade(name STRING, ssn STRING, grade FLOAT)
 COMMENT 'Actual grade table'
-STORED AS SEQUENCEFILE;
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
 
-INSERT INTO grade
-   SELECT concat(firstname,lastname), ssn, grade from students;
-
-LOAD DATA LOCAL INPATH '/tmp/grade-data.txt' OVERWRITE INTO TABLE grade;
+LOAD DATA LOCAL INPATH 'grade-data.txt' OVERWRITE INTO TABLE grade;
 
