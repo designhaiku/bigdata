@@ -1,0 +1,4 @@
+Harry Potter,123-45-6789,3.5
+Phil Fry,566-45-6789,2.7
+Bill Roberts,932-34-4940,3.8
+Mary Jones,320-32-9923,4.0
