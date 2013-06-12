@@ -2,12 +2,12 @@
 
 ### Motivation for NoSql
  * Classic architecture uses a relational database shared by multiple applications. The database acts as a persistence, concurency control and integration mechanism. There are several problems with this approach.
- * One alternative is to raise the level of abtraction and do integration at the service layer - hello SOA! SOA makes the underlying database irrelevant. We can pick the best tool for the job!
+ * One alternative is to raise the level of abstraction and do integration at the service layer - hello SOA! SOA makes the underlying database irrelevant. We can pick the best tool for the job!
  * Another problem is the impedance mismatch between relational world and object oriented world. Some domains are really hard to express in relational terms.
- * Perhaps the major driving force behind the NoSql movement is the rise of the CLOUD and the need to scale to gazillions of users. Relational databases are not particularly cloud friendly and are very expensive to scale.
+ * Perhaps the major driving force behind the NoSql movement is the rise of the Cloud and the need to scale to gazillions of users. Relational databases are not particularly cloud friendly and are very expensive to scale.
 
 ### Types of NoSql databases
- Can be classified across several dimensions. I'll classify them by their data model. In DDD aggregate is a collection of related objects treated as one unit. We typically use aggregates to define atomic operations, consistency checks and communicate with the data storage. This approach nicely removes a signinficant part of the complexity associated with ORM tools. Aggregate orientation also makes scalability easier and deploying on a cluster. The NoSql databases I will discuss use an aggregate oriented approach.
+ Can be classified across several dimensions. I'll classify them by their data model. In Domain Drived Design an aggregate is a collection of related objects treated as one unit. We typically use aggregates to define atomic operations, consistency checks and communicate with the data storage. This approach nicely removes a signinficant part of the complexity associated with ORM tools. Aggregate orientation also makes scalability easier to tackle. The NoSql databases I will discuss use an aggregate oriented approach.
 
 #### Key-Value databases
 
@@ -49,8 +49,8 @@
 * Multiple columns form a **row**. A row may contain millions of columns. Rows are stored lexicographically by their row keys.
 * A **table** is a collection of rows.
 * Columns are grouped into **column families**. Column families provide semantic boundaries between data. Columns from same family are stored together in the same storage file called an **HFile**
-* Column families are defined at table creation time. Should not be changed too often since this is an expensive operation. Should not have a reasonable number of families.
-* The **Region** is the basic unit of scalability and load balancing. The represent continuous ranges of rows stored together - similar to shards in RDMS. Regions are dynamically created by the system. Can be either split when they become two large or merged to reduce number of storage files.
+* Column families are defined at table creation time. Should not be changed too often since this is an expensive operation. Should have a reasonable number of families.
+* The **Region** is the basic unit of scalability and load balancing. They represent continuous ranges of rows stored together - similar to shards in RDMS. Regions are dynamically created by the system. Can be either split when they become two large or merged to reduce number of storage files.
 * Each region is served by exactly one **Region Server**. Each Region Server can serve multiple regions.
 
 #### Storage
