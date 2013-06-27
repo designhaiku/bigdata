@@ -1,0 +1,9 @@
+GOAL:  To explore how a basic Flume agent works
+CHANGE: From within the provided VM running simply run the command:
+  "sudo cp /etc/flume-ng/conf/flume-conf.properties.template /etc/flume-ng/conf/flume.conf"
+---------------------------------------------
+  After executing the copy (cp) command above, you should be able to run:
+  "tail /var/log/flume-ng/flume.log"
+
+Take notice of body of log entries.  The headers are empty.
+

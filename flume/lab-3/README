@@ -1,0 +1,5 @@
+GOAL:  To explore Flume sources, and sink types.  Reference http://flume.apache.org for documentation
+---------------------------------------------
+
+Challenge:  Try to setup Flume to parse each entry/record for hostname or date and write it to hdfs.
+

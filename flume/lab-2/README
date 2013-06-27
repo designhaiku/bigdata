@@ -1,0 +1,11 @@
+GOAL:  To switch to netcat source to support many clients
+CHANGE: From within the provided VM running simply run the command:
+  "sudo cp ./flume.conf /etc/flume-ng/conf/flume.conf"
+---------------------------------------------
+  After executing the copy (cp) command above, you should be able to run:
+  "tail -F /var/log/flume-ng/flume.log"
+  In a second terminal in the VM, run:
+  "nc localhost 12000"
+  Then, type random messages along with pressing <enter>  Note the tail flume.log echos your random messages.
+
+Take notice of body of log entries.  The headers are empty.
